@@ -1,66 +1,47 @@
-## Foundry
+# MultiSig & Factory Smart Contracts
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Overview
 
-Foundry consists of:
+This repository includes two Solidity smart contracts: `MultiSig` and `Factory`. These contracts create a multi-signature wallet system on the Ethereum blockchain, allowing multiple owners to manage and approve transactions together. The `Factory` contract makes it easy to create and track multiple `MultiSig` wallets.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Contracts
 
-## Documentation
+### MultiSig Contract
 
-https://book.getfoundry.sh/
+The `MultiSig` contract lets a group of owners manage a shared wallet. To execute a transaction, it needs approval from a minimum number of owners (threshold). This ensures that no single owner can control the wallet on their own.
 
-## Usage
+### Factory Contract
 
-### Build
+The `Factory` contract helps create new `MultiSig` wallets. It keeps a record of all wallets created and allows users to fetch wallets based on ownership.
 
-```shell
-$ forge build
-```
+## Key Features
 
-### Test
+### MultiSig Contract
 
-```shell
-$ forge test
-```
+- **Multiple Owners**: The wallet can have multiple owners, all with the power to propose and approve transactions.
+- **Threshold Approval**: Transactions can only be executed if enough owners approve them.
+- **Auto-Execution**: Transactions can be set to execute automatically once the approval threshold is met.
 
-### Format
+### Factory Contract
 
-```shell
-$ forge fmt
-```
+- **Wallet Creation**: Easily create new `MultiSig` wallets with custom settings.
+- **Wallet Tracking**: Keep track of all wallets created, and fetch them based on ownership.
 
-### Gas Snapshots
+## Technologies Used
 
-```shell
-$ forge snapshot
-```
+### Solidity
 
-### Anvil
+- **[Solidity](https://soliditylang.org/)** is the programming language used to write the `MultiSig` and `Factory` smart contracts. It is the standard language for developing smart contracts on the Ethereum blockchain.
 
-```shell
-$ anvil
-```
+### Foundry
 
-### Deploy
+- **[Foundry](https://book.getfoundry.sh/)** is the development framework used for compiling, testing, and deploying the Solidity contracts. Foundry provides a robust environment for building and managing Ethereum projects efficiently.
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+## How to Deploy
 
-### Cast
+1. **Install Foundry**: Follow the [Foundry installation guide](https://book.getfoundry.sh/getting-started/installation.html) to set up Foundry on your machine.
 
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+2. **Clone the Repository**:
+   ```bash
+   git clone <repository_url>
+   cd <repository_directory>
