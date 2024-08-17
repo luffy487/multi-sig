@@ -37,11 +37,3 @@ The `Factory` contract helps create new `MultiSig` wallets. It keeps a record of
 
 - **[Foundry](https://book.getfoundry.sh/)** is the development framework used for compiling, testing, and deploying the Solidity contracts. Foundry provides a robust environment for building and managing Ethereum projects efficiently.
 
-## How to Deploy
-
-1. **Install Foundry**: Follow the [Foundry installation guide](https://book.getfoundry.sh/getting-started/installation.html) to set up Foundry on your machine.
-
-2. **Clone the Repository**:
-   ```bash
-   git clone <repository_url>
-   cd <repository_directory>
